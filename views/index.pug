@@ -1,24 +1,28 @@
 extends layout
 
 block content
-  .container
-    h1 Proyecto Blockchain
-    p
-      | Este proyecto es una demostración de un blockchain del proyecto final de criptología.
-    br
-    h2 Integrantes
-    ul
-      li Dayana Silva - 20231678040
-      li Holman Alba - 20231678018
-      li Javier Espitia - 20231678028
-    br
-    h3 Universidad Distrital Francisco José de Caldas
-    br
-    h3 Año
-    p 2024
-    br
-    p.pull-right
-      | Este proyecto está basado en el trabajo de 
-      a(href='http://andersbrownworth.com/') Anders Brownworth
-      | . Repositorio original en 
-      a(href='https://github.com/anders94/blockchain-demo/') GitHub.
+  .container.mt-5
+    .row
+      .col-md-12
+        h1.display-4.text-center Proyecto Blockchain
+        p.lead.text-center
+          | Este proyecto es una demostración de un blockchain del proyecto final de criptología.
+        hr
+    .row.mt-4
+      .col-md-12
+        h2 Integrantes
+        ul.list-group
+          li.list-group-item Dayana Silva - 20231678040
+          li.list-group-item Holman Alba - 20231678018
+          li.list-group-item Javier Espitia - 20231678028
+    
+    .row.mt-4
+      .col-md-12
+        p.text-center
+          | Universidad Distrital Francisco José de Caldas &copy; 2024
+      .col-md-12
+        p.text-center
+          | Este proyecto está basado en el trabajo de 
+          a(href='http://andersbrownworth.com/' target='_blank') Anders Brownworth
+          | . Repositorio original en 
+          a(href='https://github.com/anders94/blockchain-demo/' target='_blank') GitHub.
