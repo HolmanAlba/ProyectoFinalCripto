@@ -3,7 +3,7 @@ extends layout
 block content
   .container
 
-    h1 SHA256 #{__('Hash')}
+    h1 SHA512 #{__('Hash')}
     .well#well1
       form.form-horizontal
 
@@ -15,7 +15,7 @@ block content
         .form-group
           label.col-sm-2.control-label(for='hash') #{__('Hash')}:
           .col-sm-10
-            input#hash.form-control(type='text', disabled)
+            textarea#hash.form-control(rows='8', disabled)
 
   script.
     function getText(block, chain) {
@@ -24,8 +24,8 @@ block content
 
     $(function() {
       $('#data').bind('input propertychange', function() {
-        $('#hash').val(sha256());
+        $('#hash').val(sha512());
       });
     });
 
-    $('#hash').val(sha256());
+    $('#hash').val(sha512());

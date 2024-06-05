@@ -1,8 +1,3 @@
-/////////////////////////
-// global variable setup
-/////////////////////////
-
-// number of zeros required at front of hash
 var difficultyMajor = 4;
 
 // 0-15, maximum (decimal) value of the hex digit after the front
@@ -37,9 +32,9 @@ else if (difficultyMinor <= 7) { maximumNonce *= 2;  } // 0111 require 1 more 0 
 /////////////////////////
 // functions
 /////////////////////////
-function sha256(block, chain) {
-  // calculate a SHA256 hash of the contents of the block
-  return CryptoJS.SHA256(getText(block, chain));
+function sha512(block, chain) {
+  // calculate a SHA512 hash of the contents of the block
+  return CryptoJS.SHA512(getText(block, chain));
 }
 
 function updateState(block, chain) {
@@ -53,8 +48,8 @@ function updateState(block, chain) {
 }
 
 function updateHash(block, chain) {
-  // update the SHA256 hash value for this block
-  $('#block'+block+'chain'+chain+'hash').val(sha256(block, chain));
+  // update the SHA512 hash value for this block
+  $('#block'+block+'chain'+chain+'hash').val(sha512(block, chain));
   updateState(block, chain);
 }
 
@@ -71,7 +66,7 @@ function updateChain(block, chain) {
 function mine(block, chain, isChain) {
   for (var x = 0; x <= maximumNonce; x++) {
     $('#block'+block+'chain'+chain+'nonce').val(x);
-    $('#block'+block+'chain'+chain+'hash').val(sha256(block, chain));
+    $('#block'+block+'chain'+chain+'hash').val(sha512(block, chain));
     if ($('#block'+block+'chain'+chain+'hash').val().substr(0, patternLen) <= pattern) {
       if (isChain) {
         updateChain(block, chain);
