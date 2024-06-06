@@ -43,13 +43,12 @@ html(lang='es')
           ul.nav.navbar-nav.navbar-right
             li(class={active: page === 'hash'})
               a(href='/hash') #{__('Hash')}
-            li(class={active: page === 'blockchain'})
-              a(href='/blockchain') #{__('Blockchain')}
             li(class={active: page === 'keys'})
               a(href='/keys') #{__('Keys')} 
             li(class={active: page === 'signatures'})
               a(href='/signatures') #{__('Signatures')} 
             li(class={active: page === 'transaction'})
               a(href='/transaction') #{__('Transaction')} 
-
+            li(class={active: page === 'blockchain'})
+              a(href='/blockchain') #{__('Blockchain')}
     block content
