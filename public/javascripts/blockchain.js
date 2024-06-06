@@ -1,4 +1,4 @@
-var difficulty = 4;        // number of zeros required at front of hash
+var difficulty = 3;        // number of zeros required at front of hash
 var maximumNonce = 500000; // limit the nonce to this so we don't mine too long
 
 /////////////////////////
@@ -46,8 +46,10 @@ function updateChain(block, chain) {
 }
 
 function mine(block, chain, isChain) {
+  console.log(block+"block"+chain+"chain"+isChain);
   for (var x = 0; x <= maximumNonce; x++) {
     $('#block'+block+'chain'+chain+'nonce').val(x);
+
     $('#block'+block+'chain'+chain+'hash').val(sha512(block, chain));
     if ($('#block'+block+'chain'+chain+'hash').val().substr(0, difficulty) === pattern) {
       if (isChain) {
